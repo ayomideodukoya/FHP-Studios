@@ -1,8 +1,8 @@
-"""add new booking form fields
+"""initial schema
 
-Revision ID: ce0aafd73d97
+Revision ID: f1b6ab4a35ef
 Revises:
-Create Date: 2026-03-17 10:31:12.975482
+Create Date: 2026-03-17 11:02:27.385774
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'ce0aafd73d97'
+revision: str = 'f1b6ab4a35ef'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -24,17 +24,10 @@ def upgrade() -> None:
     op.create_table('bookings',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=100), nullable=False),
-    sa.Column('brand_name', sa.String(length=100), nullable=True),
-    sa.Column('email', sa.String(length=100), nullable=False),
+    sa.Column('email', sa.String(), nullable=False),
     sa.Column('phone', sa.String(length=20), nullable=False),
     sa.Column('space_usage', sa.String(length=100), nullable=False),
-    sa.Column('guest_size', sa.String(length=50), nullable=False),
     sa.Column('preferred_date', sa.DateTime(), nullable=False),
-    sa.Column('duration', sa.String(length=50), nullable=False),
-    sa.Column('addons', sa.Text(), nullable=True),
-    sa.Column('external_vendors', sa.Boolean(), nullable=False),
-    sa.Column('vision_notes', sa.Text(), nullable=True),
-    sa.Column('attribution', sa.String(length=100), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -42,9 +35,9 @@ def upgrade() -> None:
     op.create_table('contact_messages',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=100), nullable=False),
-    sa.Column('email', sa.String(length=100), nullable=False),
+    sa.Column('email', sa.String(), nullable=False),
     sa.Column('subject', sa.String(length=200), nullable=False),
-    sa.Column('message', sa.Text(), nullable=False),
+    sa.Column('message', sa.String(), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -52,10 +45,10 @@ def upgrade() -> None:
     op.create_table('events',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=100), nullable=False),
-    sa.Column('description', sa.Text(), nullable=False),
+    sa.Column('description', sa.String(), nullable=False),
     sa.Column('date_time', sa.DateTime(), nullable=False),
-    sa.Column('location', sa.String(length=200), nullable=True),
-    sa.Column('image_url', sa.String(length=255), nullable=True),
+    sa.Column('location', sa.String(), nullable=True),
+    sa.Column('image_url', sa.String(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_events_id'), 'events', ['id'], unique=False)
