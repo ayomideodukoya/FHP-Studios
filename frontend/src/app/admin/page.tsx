@@ -16,20 +16,35 @@ export default function AdminDashboard() {
     setError("");
 
     try {
-      const authStr = btoa(`${credentials.username}:${credentials.password}`);
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/admin/bookings/`, {
+      const formData = new URLSearchParams();
+      formData.append('username', credentials.username);
+      formData.append('password', credentials.password);
+
+      const loginRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/auth/login`, {
+        method: 'POST',
         headers: {
-          'Authorization': `Basic ${authStr}`
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString()
+      });
+
+      if (!loginRes.ok) throw new Error("Invalid credentials");
+      const authData = await loginRes.json();
+      const token = authData.access_token;
+
+      // Fetch bookings with JWT token
+      const bookingsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/bookings/`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
         }
       });
 
-      if (!res.ok) throw new Error("Invalid credentials");
+      if (!bookingsRes.ok) throw new Error("Failed to load bookings");
+      const data = await bookingsRes.json();
 
-      const data = await res.json();
       setBookings(data);
       setIsAuthenticated(true);
-      // Store auth for this session in memory
-      (window as any).adminAuth = authStr;
+      (window as any).adminToken = token;
     } catch (err: any) {
       setError(err.message || "Failed to login");
     } finally {

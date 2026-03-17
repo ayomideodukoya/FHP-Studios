@@ -3,7 +3,7 @@ services:
     name: fhp-backend
     env: python
     buildCommand: "cd backend && pip install -r requirements.txt"
-    startCommand: "cd backend && python pre_start.py && uvicorn main:app --host 0.0.0.0 --port 10000"
+    startCommand: "cd backend && PYTHONPATH=. python app/pre_start.py && uvicorn app.main:app --host 0.0.0.0 --port 10000"
     envVars:
       - key: DATABASE_URL
         sync: false

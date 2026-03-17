@@ -96,7 +96,7 @@ export function ContactForm() {
       // Combine date and time for backend
       const combinedDateTime = new Date(`${formData.preferred_date}T${formData.start_time}`).toISOString();
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/bookings/`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/bookings/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
