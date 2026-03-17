@@ -14,7 +14,13 @@ def create_event(db: Session, event: schemas.EventCreate):
 
 # Booking Operations
 def create_booking(db: Session, booking: schemas.BookingCreate):
-    db_booking = models.Booking(**booking.dict())
+    booking_data = booking.dict()
+    # Serialize the list of addons into a string before saving
+    if "addons" in booking_data:
+        addons_list = booking_data.pop("addons")
+        booking_data["addons"] = ", ".join(addons_list) if addons_list else None
+
+    db_booking = models.Booking(**booking_data)
     db.add(db_booking)
     db.commit()
     db.refresh(db_booking)

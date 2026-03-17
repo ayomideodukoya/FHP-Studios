@@ -1,13 +1,8 @@
 INFO:     Will watch for changes in these directories: ['/app/backend']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [40763] using StatReload
-INFO:     Started server process [40769]
+INFO:     Started reloader process [48385] using StatReload
+INFO:     Started server process [48389]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:53562 - "GET /events/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49804 - "POST /bookings/ HTTP/1.1" 201 Created
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [40769]
-INFO:     Stopping reloader process [40763]
+INFO:     127.0.0.1:50902 - "GET /events/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50902 - "OPTIONS /bookings/ HTTP/1.1" 400 Bad Request
