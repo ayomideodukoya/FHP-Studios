@@ -17,12 +17,17 @@ class Booking(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False)
+    brand_name = Column(String(100), nullable=True)
     email = Column(String(100), nullable=False)
     phone = Column(String(20), nullable=False)
+    space_usage = Column(String(100), nullable=False)
+    guest_size = Column(String(50), nullable=False)
     preferred_date = Column(DateTime, nullable=False)
-    event_type = Column(String(100), nullable=False)
-    expected_guests = Column(Integer, nullable=False)
-    message = Column(Text, nullable=True)
+    duration = Column(String(50), nullable=False)
+    addons = Column(Text, nullable=True) # Storing as a comma-separated string or JSON string
+    external_vendors = Column(Boolean, nullable=False, default=False)
+    vision_notes = Column(Text, nullable=True)
+    attribution = Column(String(100), nullable=True)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
 class ContactMessage(Base):
