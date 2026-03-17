@@ -10,7 +10,8 @@ from database import engine, get_db
 from config import settings
 from admin import router as admin_router
 
-models.Base.metadata.create_all(bind=engine)
+# We rely on Alembic to manage database schema updates now.
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="FHP Studios API",
