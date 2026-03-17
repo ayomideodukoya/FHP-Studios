@@ -155,6 +155,16 @@ export function ContactForm() {
               Ready To Create? <br />
               <span className="text-fhp-yellow-dark">Let's Talk Space.</span>
             </h3>
+
+            {/* Pricing Anchor */}
+            <div className="mb-6 inline-block bg-fhp-yellow/10 border border-fhp-yellow/20 rounded-2xl px-6 py-4">
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider block mb-1">Starting At</span>
+              <div className="flex items-baseline gap-2 text-fhp-blue-dark">
+                <span className="text-3xl font-black font-display">₦25,000</span>
+                <span className="text-sm font-medium text-gray-500">/ hour</span>
+              </div>
+            </div>
+
             <p className="text-gray-600 text-lg mb-8 leading-relaxed font-light">
               From intimate proposals to high-energy panels, our versatile space adapts to your vision. Tell us what you're building, and we'll help set the stage.
             </p>
