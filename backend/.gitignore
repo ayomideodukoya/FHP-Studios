@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .env
 fhp_studios.db
+uvicorn.log
