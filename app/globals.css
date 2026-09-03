@@ -3,6 +3,8 @@
 @import 'shadcn/tailwind.css';
 
 :root {
+  --font-fhp: Arial, Helvetica, sans-serif;
+  --font-display-weight: 900;
   --ink: #11120f;
   --cream: #f5f0e7;
   --blue: #263bbd;
@@ -17,7 +19,20 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-fhp);
+}
+@theme inline {
+  --font-sans: var(--font-fhp);
+  --font-heading: var(--font-fhp);
+}
+
+/* Keep the hero's family and bold display character across every section. */
+h1, h2, h3, h4, h5, h6, .preview-card strong, .faq summary {
+  font-family: var(--font-fhp);
+  font-weight: var(--font-display-weight);
+}
+button, input, select, textarea, option {
+  font-family: inherit;
 }
 a { color: inherit; text-decoration: none; }
 
