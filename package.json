@@ -6,6 +6,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "dev:vercel": "next dev",
+    "build:vercel": "next build --webpack",
+    "start:vercel": "next start",
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
@@ -13,6 +16,7 @@
     "format": "oxfmt"
   },
   "dependencies": {
+    "next": "16.3.4",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "react-server-dom-webpack": "19.2.6",

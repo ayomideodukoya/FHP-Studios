@@ -162,7 +162,7 @@ export default function Home() {
           </div>
           <iframe className="location-map" title="FHP Studios location in Ogba, Lagos" src="https://maps.google.com/maps?q=Plot%2032%20Oba%20Ogunji%20Road%20Ogba%20Lagos&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
-        <BookingForm />
+        <BookingForm online={process.env.BOOKING_ENABLED === 'true'} />
       </section>
 
       <section className="faq content-section">
