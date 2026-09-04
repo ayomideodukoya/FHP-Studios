@@ -4,7 +4,7 @@
 
 Vercel builds use `npm run build:vercel`. Existing Sites builds continue to use `npm run build`; no Sites deployment or access change is required for this migration.
 
-The booking endpoint and database migration are prepared, not live-tested. `BOOKING_ENABLED` defaults off. Until enabled the UI keeps the original email form. No real enquiries have been migrated or submitted.
+The booking endpoint and database migration are prepared, not live-tested. `BOOKING_ENABLED` defaults off. The form always submits to the server and never opens an email draft. Until enabled, the server returns an on-page unavailable message; it does not save an enquiry or report success. No real enquiries have been migrated or submitted by this implementation workflow.
 
 Local checks on 2026-09-04: compilation, TypeScript and 11 input-validation tests passed. Vercel builds use the supported Webpack compiler because Turbopack's local compiler subprocess failed with a port permission error. Database integration, email delivery, anonymous-access checks and production deployment remain unverified. The saved GitHub login was invalid; reconnect before attempting repository publication. The dependency audit still reports advisories in the retained Sites dependency tree and react-server-dom-webpack; remediate and rerun the audit before production launch.
 
