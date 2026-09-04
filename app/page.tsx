@@ -143,7 +143,7 @@ export default function Home() {
       <section className="about-grid" id="about">
         <div className="about-copy">
           <p className="eyebrow">Why FHP</p>
-          <h2>A warm creative clubhouse in the heart of Ogba.</h2>
+          <h2>A warm creative studio in the heart of Ogba.</h2>
           <p>FHP Studios exists for the in-between stage—the moment an idea needs a table, a backdrop, a room, a little energy and the right people around it.</p>
           <p>We built a space that can shift with you: quiet enough to work, flexible enough to shoot, and welcoming enough to gather.</p>
           <a className="pill-button dark-button" href="#book">Bring your idea</a>
