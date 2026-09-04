@@ -14,8 +14,10 @@ import {
 } from 'lucide-react';
 import { BookingForm } from '@/components/booking-form';
 import { BrandLogo } from '@/components/brand-logo';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function Home() {
+  const whatsappUrl = getWhatsAppUrl(process.env.FHP_WHATSAPP_NUMBER);
   return (
     <main className="site-shell">
       <header className="glass-nav">
@@ -187,13 +189,14 @@ export default function Home() {
           <a href="#book">Book now</a>
           <a href="https://instagram.com/thefhpstudios" target="_blank" rel="noreferrer">Instagram</a>
           <a href="mailto:thefhpstudios@gmail.com">Email</a>
+          {whatsappUrl && <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>}
           <a href="#top">Back to top ↑</a>
         </div>
         <small>© 2026 FHP Studios. Where ideas come alive.</small>
       </footer>
 
-      <a className="whatsapp-float" href="#book" aria-label="Enquire about a booking">
-        <MessageCircle aria-hidden="true" /> <span>Let’s book</span>
+      <a className="whatsapp-float" href={whatsappUrl || '#book'} target={whatsappUrl ? '_blank' : undefined} rel={whatsappUrl ? 'noopener noreferrer' : undefined} aria-label={whatsappUrl ? 'Chat with FHP on WhatsApp (opens in a new tab)' : 'Enquire about a booking'}>
+        <MessageCircle aria-hidden="true" /> <span>{whatsappUrl ? 'Chat on WhatsApp' : 'Let’s book'}</span>
       </a>
     </main>
   );
