@@ -117,24 +117,24 @@ export default function Home() {
 
       <section className="moments content-section" id="moments">
         <div className="section-heading compact">
-          <p className="eyebrow">Imagine the possibilities</p>
+          <p className="eyebrow">Inside FHP Studios</p>
           <h2>Good people.<br />Beautiful moments.</h2>
         </div>
         <div className="moments-grid">
           <article className="moment-card moment-large">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1800&q=85" alt="Creative community sharing a happy moment" />
+            <img src="/images/fhp-ogba-community.webp" width={1600} height={1200} loading="lazy" decoding="async" alt="A group gathered for a photo in front of the FHP Studios logo wall in Ogba" />
             <div><span>Community</span><h3>The room feels different when everyone brings something.</h3></div>
           </article>
           <article className="moment-card">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=85" alt="A collaborative workshop around a table" />
-            <div><span>Workshops</span><h3>Ideas shared out loud.</h3></div>
+            <img src="/images/fhp-ogba-gathering.webp" width={1200} height={1600} loading="lazy" decoding="async" alt="Guests seated on the blue sofa, chairs and tiered seating at FHP Studios" />
+            <div><span>Gatherings</span><h3>Good company. A space to connect.</h3></div>
           </article>
           <article className="moment-card">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="A focused creative team meeting" />
-            <div><span>Meetings</span><h3>Make room for the next move.</h3></div>
+            <img src="/images/fhp-ogba-studio-setup.webp" width={1200} height={1600} loading="lazy" decoding="async" alt="Green photography backdrop, tripod and chair in the FHP creative studio" />
+            <div><span>Studio</span><h3>Make room for your next idea.</h3></div>
           </article>
         </div>
-        <p className="image-disclosure">Images on this page illustrate possible uses of the space; they do not show FHP’s rooms or past events. See our Instagram for real FHP photos.</p>
+        <p className="image-disclosure">Real spaces and gatherings at FHP Studios, Ogba.</p>
         <a className="text-link" href="https://instagram.com/thefhpstudios" target="_blank" rel="noreferrer">
           <Camera /> See real FHP moments on Instagram <ArrowUpRight />
         </a>
@@ -149,7 +149,7 @@ export default function Home() {
           <a className="pill-button dark-button" href="#book">Bring your idea</a>
         </div>
         <div className="about-image">
-          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85" alt="A welcoming creative team collaborating in a bright studio" />
+          <img src="/images/fhp-ogba-event-space.webp" width={1200} height={1600} loading="lazy" decoding="async" alt="FHP Studios interior with a blue sofa, green armchair and tiered seating beneath the cloud logo" />
           <span className="image-sticker"><Sparkles /> built for possibility</span>
         </div>
       </section>

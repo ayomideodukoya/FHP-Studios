@@ -14,6 +14,7 @@ export const businessSchema = {
       url: siteUrl,
       description: siteDescription,
       logo: `${siteUrl}/fhp-logo-blue.svg`,
+      image: ['event-space', 'workspace', 'studio-setup'].map(name => `${siteUrl}/images/fhp-ogba-${name}.webp`),
       email: 'thefhpstudios@gmail.com',
       address: {
         '@type': 'PostalAddress',
