@@ -13,14 +13,14 @@ import {
   Users,
 } from 'lucide-react';
 import { BookingForm } from '@/components/booking-form';
+import { BrandLogo } from '@/components/brand-logo';
 
 export default function Home() {
   return (
     <main className="site-shell">
       <header className="glass-nav">
         <a className="brand-mark" href="#top" aria-label="FHP Studios home">
-          <Cloud aria-hidden="true" strokeWidth={2.4} />
-          <span>FHP</span>
+          <BrandLogo />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#spaces">Spaces</a>
@@ -179,6 +179,7 @@ export default function Home() {
       </section>
 
       <footer id="contact">
+        <a className="footer-brand" href="#top" aria-label="FHP Studios home"><BrandLogo /></a>
         <div className="footer-clouds" aria-hidden="true"><Cloud /><Cloud /><Cloud /></div>
         <p className="eyebrow">FHP Studios · Ogba, Lagos</p>
         <h2>Book a space.<br />Build your thing.</h2>

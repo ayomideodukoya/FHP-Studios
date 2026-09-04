@@ -52,7 +52,7 @@ export function BookingForm() {
       <div className="field field-wide"><label htmlFor="notes">Tell us about the idea</label><textarea id="notes" name="notes" rows={4} placeholder="Shoot, workshop, birthday meeting… give us the picture." /></div>
       <button type="submit" disabled={pending || submitted}>{pending ? 'Submitting…' : submitted ? 'Enquiry received' : 'Submit enquiry'} <ArrowUpRight /></button>
       <p className="form-note">We use your contact details to respond to this enquiry. Times are in Lagos local time. Submitting does not confirm a booking.</p>
-      {error && <p className="form-note" role="alert">{error} You can also email <a href="mailto:thefhpstudios@gmail.com">thefhpstudios@gmail.com</a>.</p>}
+      {error && <p className="form-note" role="alert">{error}</p>}
       {submitted && <p className="form-note" role="status">Your enquiry has been saved. The FHP team will contact you to discuss availability.</p>}
     </form>
   );
