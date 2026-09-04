@@ -15,11 +15,13 @@ import {
 import { BookingForm } from '@/components/booking-form';
 import { BrandLogo } from '@/components/brand-logo';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { businessSchema } from '@/lib/site-seo';
 
 export default function Home() {
   const whatsappUrl = getWhatsAppUrl(process.env.FHP_WHATSAPP_NUMBER);
   return (
     <main className="site-shell">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, '\\u003c') }} />
       <header className="glass-nav">
         <a className="brand-mark" href="#top" aria-label="FHP Studios home">
           <BrandLogo />
@@ -44,12 +46,12 @@ export default function Home() {
         <div className="cloud cloud-three" aria-hidden="true"><Cloud /></div>
 
         <h1>
-          <span>Where ideas</span>
-          <span className="hero-line-two">come alive<span className="dot">.</span></span>
+          <span>Create. Work. Host.</span>
+          <span className="hero-line-two">In Ogba, Lagos<span className="dot">.</span></span>
         </h1>
 
         <div className="hero-bottom">
-          <p>A bookable creative studio, workspace and intimate event venue for people building beautiful things.</p>
+          <p>FHP Studios is your creative studio, hot desk workspace and intimate event venue in Ogba, Lagos. Bring your next shoot, workday or gathering to life.</p>
           <a className="round-link" href="#spaces" aria-label="Explore our spaces">
             <ArrowDownRight aria-hidden="true" />
           </a>
@@ -74,31 +76,31 @@ export default function Home() {
       <section className="spaces-detail content-section">
         <div className="section-heading">
           <p className="eyebrow">Choose your setup</p>
-          <h2>One space.<br />So many possibilities.</h2>
-          <p>Come for an hour, a workday, a shoot, or a room full of your favourite people. We’ll help you shape the setup around the idea.</p>
+          <h2>Studio hire.<br />Workspace. Events.</h2>
+          <p>Choose a setup for your next photo shoot, focused workday or intimate event. Tell us your date, duration and group size; we’ll confirm availability and the current rate.</p>
         </div>
 
         <div className="offer-list">
-          <article className="offer-row">
+          <article className="offer-row" id="hot-desks">
             <span className="offer-number">01</span>
             <BriefcaseBusiness aria-hidden="true" />
-            <div><h3>Hot Desk</h3><p>Plug in, focus and get the work done—solo or with your small team.</p></div>
+            <div><h3>Hot desks in Ogba</h3><p>A workspace for freelancers, founders and small teams. Make room for focused work, planning and your next idea.</p></div>
             <ul><li><Check /> Solo workdays</li><li><Check /> Small-team sessions</li><li><Check /> Ask about inclusions</li></ul>
-            <a href="#book">Book this space <ArrowUpRight /></a>
+            <a href="#book">Enquire about a hot desk <ArrowUpRight /></a>
           </article>
-          <article className="offer-row">
+          <article className="offer-row" id="studio-hire">
             <span className="offer-number">02</span>
             <Camera aria-hidden="true" />
-            <div><h3>Studio Setup</h3><p>A flexible canvas for portraits, campaigns, content days and interviews.</p></div>
+            <div><h3>Creative studio hire</h3><p>Plan portraits, brand photo shoots, content days or interviews at our Lagos studio. Share your brief so we can discuss the setup and equipment you need.</p></div>
             <ul><li><Check /> Portraits & content</li><li><Check /> Interviews</li><li><Check /> Confirm equipment with us</li></ul>
-            <a href="#book">Book this space <ArrowUpRight /></a>
+            <a href="#book">Check studio availability <ArrowUpRight /></a>
           </article>
-          <article className="offer-row">
+          <article className="offer-row" id="event-space">
             <span className="offer-number">03</span>
             <Users aria-hidden="true" />
-            <div><h3>Meetings & Events</h3><p>For intimate gatherings, workshops, talks, launches and celebrations.</p></div>
+            <div><h3>Meeting & event space</h3><p>Host a workshop, talk, launch or intimate gathering in Ogba. We’ll discuss your guest count, layout and plans before confirming the booking.</p></div>
             <ul><li><Check /> Workshops & talks</li><li><Check /> Intimate gatherings</li><li><Check /> Confirm capacity with us</li></ul>
-            <a href="#book">Book this space <ArrowUpRight /></a>
+            <a href="#book">Plan your event <ArrowUpRight /></a>
           </article>
         </div>
       </section>
@@ -132,7 +134,7 @@ export default function Home() {
             <div><span>Meetings</span><h3>Make room for the next move.</h3></div>
           </article>
         </div>
-        <p className="image-disclosure">Illustrative photography throughout this preview is not a record of FHP’s rooms or past events. See Instagram for real FHP moments.</p>
+        <p className="image-disclosure">Images on this page illustrate possible uses of the space; they do not show FHP’s rooms or past events. See our Instagram for real FHP photos.</p>
         <a className="text-link" href="https://instagram.com/thefhpstudios" target="_blank" rel="noreferrer">
           <Camera /> See real FHP moments on Instagram <ArrowUpRight />
         </a>
@@ -170,9 +172,12 @@ export default function Home() {
       <section className="faq content-section">
         <div className="section-heading compact">
           <p className="eyebrow">Quick answers</p>
-          <h2>Before you ask…</h2>
+          <h2>Your booking<br />questions, answered.</h2>
         </div>
         <div className="faq-list">
+          <details><summary>Where is FHP Studios in Lagos?</summary><p>Find us at Plot 32, Oba Ogunji Road, Ogba, Lagos. We’re open daily from 9am to 7pm. <a href="#book">View the map and request a visit.</a></p></details>
+          <details><summary>What can I book at FHP Studios?</summary><p>You can enquire about a hot desk, a creative studio setup for shoots and content creation, or space for meetings and intimate events. You can also request a studio tour.</p></details>
+          <details><summary>Does submitting the form confirm my booking?</summary><p>No. The form sends an enquiry. Our team will discuss availability, pricing and your requirements before confirming a booking.</p></details>
           <details><summary>Can I customise or decorate the space?</summary><p>Yes—as long as the setup does not damage the studio or equipment. Share your idea with us before your booking.</p></details>
           <details><summary>Do you provide photographers or videographers?</summary><p>We can connect you with trusted creatives from our network when you need an extra pair of hands.</p></details>
           <details><summary>How do I get the current price?</summary><p>Send your date, space type, duration and headcount through the booking form. We’ll reply with availability and the right rate.</p></details>
